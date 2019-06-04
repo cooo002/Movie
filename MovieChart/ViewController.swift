@@ -10,10 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+    
+    // 일단 데이터를 여러 타입에 데이터를 가지고 있으니 튜플로 묶고 그것을 또 배열로 만들어준다 .
+ 
 
 
 }
