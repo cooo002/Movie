@@ -56,11 +56,21 @@ class ListViewTableController : UITableViewController  {
         cell.opendate?.text = row.opendate// ""
         cell.rating?.text = "\(row.rating)" // ""
 //        cell.thumbnail.image = UIImage(named: row.thumbnail!) // UIImage생성자를 이미지 객첼를 생성할 때 매개변수로 실제 프로젝트 폴더 내에 존재하고 이미지 객체로 만들고 싶은 이미지의 파일명을 인자로 넘겨준다. UIImage(contentsOfFile:) 에서도 이미지명을 인자로 넘겨준다.
-        let url: URL! = URL(string: row.thumbnail!)
         
-        let imageData = try! Data(contentsOf: url)
-         cell.thumbnail.image = UIImage(data: imageData)
-    
+        // note: 아래 코드를 그대로 사용하면 셀이 만들어질 때만닫 네트워크에서 이미즐르 읽어와서 셀에 표현해줘야하는 코드이다.(효율적이지 못한 코드이다. 네트워크등 처리 시간이 긴 로직은 반보적으로 호출되는 메소드에서 사용되면  메소드 호출 때 마다 실행되기 때문에 굉장히 많은 시간을 잡아먹게 된다. )
+//        let url: URL! = URL(string: row.thumbnail!)
+//
+//        let imageData = try! Data(contentsOf: url)
+//         cell.thumbnail.image = UIImage(data: imageData)
+        
+        
+        // note : 아래 코드를 미지가 저장되어 있는 thumbnailImage배열에서 이미지를 그냥 읽어오게 된다(네트워크에서 읽어오는 것이 아니다 )
+       
+        DispatchQueue.main.async(execute:
+            {cell.thumbnail?.image = self.getThumbnailImage(indexPath.row)
+                
+        })
+
         return cell
     }
     
@@ -122,12 +132,18 @@ class ListViewTableController : UITableViewController  {
                 let r = row as! NSDictionary
                 
                 let mvo = MovieVO()
+            
                 
                 mvo.title = r["title"] as? String
                 mvo.description = r["genreNames"] as? String
                 mvo.thumbnail = r["thumbnailImage"] as? String
                 mvo.detail = r["linkUrl"] as? String
                 mvo.rating = ((r["ratingAverage"] as! NSString).doubleValue)
+                //note: 웹상에 이미지를mvo.thumbnail에 저장된 URL을 통해 읽어온 뒤 그 이미지를 배열 자체에 저장하여 로컬단에서 읽어올수 있도록 준비를 해주는 코드
+                let url: URL! = URL(string: mvo.thumbnail!)
+                
+                let imageData = try! Data(contentsOf: url)
+                mvo.thumbnailImage = UIImage(data: imageData)
                 
                 // list 라는 배열의 추가
                 self.list.append(mvo)
@@ -149,6 +165,28 @@ class ListViewTableController : UITableViewController  {
         
     }
     
-    
+    func getThumbnailImage(_ index : Int) -> UIImage{
+        //인자값으로 받은 정수로 배열에 해당 인덱스에 존재하는 값을 읽어온다.
+        let mvo = self.list[index]
+        
+        
+        // 이 부분에서 메모이제이션 기법이 적용된다. 저장된 이미지가 있으면 그것ㅇ르 반환하고 없을 경우 내려받아 저장한 후
+        //그것을 반환한다.
+        if let already_Image = mvo.thumbnailImage{
+            
+            return already_Image
+        }
+        else{
+            
+            let url : URL! = URL(string: mvo.thumbnail!)
+            let imageData = try! Data(contentsOf: url)
+            mvo.thumbnailImage = UIImage(data: imageData)
+            
+            return mvo.thumbnailImage!
+        }
+        
+        
+        
+    }
 }
 
