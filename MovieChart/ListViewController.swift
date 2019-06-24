@@ -188,5 +188,27 @@ class ListViewTableController : UITableViewController  {
         
         
     }
+    
+
+}
+
+// mark:  화면 전환시 값을 넘겨주기 위한 세그웨이 관련 처리
+extension ListViewTableController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segue_detail"{
+            
+            let path = self.tableView.indexPath(for: sender as! MovieCell)
+            // note: indexPath(for: ) 메소드에 for 인자에 들어가는 파라미터는 셀 자체의 상세 속성을 알고싶은 셀의 참조값이 전달되어야한다.  sende라는 매개변수는 세그웨이를 실행시킨 객체 자체를 가를키는 참조값이 들어가 았을 뿐 그 객체에 포함된 상세 정보를 담고있는 것은 아니다. 그래서 그 상세 정볼르 알기위해서 indexPath를 이용하는 것이다.
+            let detailVC = segue.destination as! DetailViewController
+            // note : 세그웨이를 이용해서 정보를 전달할 때 그 정보가 전달되느 도착지를 설정하는 코드
+            detailVC.mvo = self.list[path!.row]
+            //not: 도착지에 mvo 라는 변수에 정보를 전달해준다.
+        }
+        
+        
+        
+    }
+    
+    
 }
 

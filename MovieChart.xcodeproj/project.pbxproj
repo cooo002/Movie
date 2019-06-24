@@ -20,6 +20,8 @@
 		639D1A9F22A61EA4007060FC /* rain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 639D1A9C22A61EA4007060FC /* rain.jpg */; };
 		639D1AA022A61EA4007060FC /* darknight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 639D1A9D22A61EA4007060FC /* darknight.jpg */; };
 		639D1AA122A61EA4007060FC /* secret.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 639D1A9E22A61EA4007060FC /* secret.jpg */; };
+		639D1B1F22AE5128007060FC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639D1B1E22AE5128007060FC /* DetailViewController.swift */; };
+		639D1B2222AF8AE8007060FC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639D1B2122AF8AE8007060FC /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		639D1A9C22A61EA4007060FC /* rain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rain.jpg; sourceTree = "<group>"; };
 		639D1A9D22A61EA4007060FC /* darknight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = darknight.jpg; sourceTree = "<group>"; };
 		639D1A9E22A61EA4007060FC /* secret.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = secret.jpg; sourceTree = "<group>"; };
+		639D1B1E22AE5128007060FC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		639D1B2122AF8AE8007060FC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639D1B2222AF8AE8007060FC /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +99,7 @@
 				639D1A7B22A3AFC5007060FC /* MovieChartTests */,
 				639D1A8622A3AFC5007060FC /* MovieChartUITests */,
 				639D1A6222A3AFC3007060FC /* Products */,
+				639D1B2022AF8AE8007060FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +118,7 @@
 			children = (
 				639D1A6422A3AFC3007060FC /* AppDelegate.swift */,
 				639D1A6822A3AFC3007060FC /* Main.storyboard */,
+				639D1B1E22AE5128007060FC /* DetailViewController.swift */,
 				639D1A9922A582B9007060FC /* MovieCell.swift */,
 				639D1A9522A3B5B5007060FC /* ListViewController.swift */,
 				639D1A9722A3E906007060FC /* MovieVO.swift */,
@@ -149,6 +156,14 @@
 				639D1A9E22A61EA4007060FC /* secret.jpg */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		639D1B2022AF8AE8007060FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				639D1B2122AF8AE8007060FC /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +303,7 @@
 				639D1A6D22A3AFC3007060FC /* MovieChart.xcdatamodeld in Sources */,
 				639D1A9622A3B5B5007060FC /* ListViewController.swift in Sources */,
 				639D1A6522A3AFC3007060FC /* AppDelegate.swift in Sources */,
+				639D1B1F22AE5128007060FC /* DetailViewController.swift in Sources */,
 				639D1A9A22A582B9007060FC /* MovieCell.swift in Sources */,
 				639D1A9822A3E906007060FC /* MovieVO.swift in Sources */,
 			);
