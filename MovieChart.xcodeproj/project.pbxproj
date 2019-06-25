@@ -22,6 +22,10 @@
 		639D1AA122A61EA4007060FC /* secret.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 639D1A9E22A61EA4007060FC /* secret.jpg */; };
 		639D1B1F22AE5128007060FC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639D1B1E22AE5128007060FC /* DetailViewController.swift */; };
 		639D1B2222AF8AE8007060FC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639D1B2122AF8AE8007060FC /* WebKit.framework */; };
+		639D1B3822C0A00F007060FC /* Listbullets.png in Resources */ = {isa = PBXBuildFile; fileRef = 639D1B3622C0A00F007060FC /* Listbullets.png */; };
+		639D1B3922C0A00F007060FC /* Trailer.png in Resources */ = {isa = PBXBuildFile; fileRef = 639D1B3722C0A00F007060FC /* Trailer.png */; };
+		639D1B3B22C0AA5C007060FC /* TheaterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639D1B3A22C0AA5C007060FC /* TheaterCell.swift */; };
+		639D1B3D22C0AC95007060FC /* TheaterListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639D1B3C22C0AC95007060FC /* TheaterListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		639D1A9E22A61EA4007060FC /* secret.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = secret.jpg; sourceTree = "<group>"; };
 		639D1B1E22AE5128007060FC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		639D1B2122AF8AE8007060FC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		639D1B3622C0A00F007060FC /* Listbullets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Listbullets.png; path = "../../swift03-basic/TabIcon/Listbullets.png"; sourceTree = "<group>"; };
+		639D1B3722C0A00F007060FC /* Trailer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Trailer.png; path = "../../swift03-basic/TabIcon/Trailer.png"; sourceTree = "<group>"; };
+		639D1B3A22C0AA5C007060FC /* TheaterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterCell.swift; sourceTree = "<group>"; };
+		639D1B3C22C0AC95007060FC /* TheaterListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,8 @@
 			children = (
 				639D1A6422A3AFC3007060FC /* AppDelegate.swift */,
 				639D1A6822A3AFC3007060FC /* Main.storyboard */,
+				639D1B3C22C0AC95007060FC /* TheaterListController.swift */,
+				639D1B3A22C0AA5C007060FC /* TheaterCell.swift */,
 				639D1B1E22AE5128007060FC /* DetailViewController.swift */,
 				639D1A9922A582B9007060FC /* MovieCell.swift */,
 				639D1A9522A3B5B5007060FC /* ListViewController.swift */,
@@ -151,6 +161,8 @@
 		639D1A9B22A61806007060FC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				639D1B3622C0A00F007060FC /* Listbullets.png */,
+				639D1B3722C0A00F007060FC /* Trailer.png */,
 				639D1A9D22A61EA4007060FC /* darknight.jpg */,
 				639D1A9C22A61EA4007060FC /* rain.jpg */,
 				639D1A9E22A61EA4007060FC /* secret.jpg */,
@@ -270,6 +282,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639D1B3822C0A00F007060FC /* Listbullets.png in Resources */,
+				639D1B3922C0A00F007060FC /* Trailer.png in Resources */,
 				639D1A7222A3AFC5007060FC /* LaunchScreen.storyboard in Resources */,
 				639D1AA122A61EA4007060FC /* secret.jpg in Resources */,
 				639D1A9F22A61EA4007060FC /* rain.jpg in Resources */,
@@ -301,7 +315,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				639D1A6D22A3AFC3007060FC /* MovieChart.xcdatamodeld in Sources */,
+				639D1B3B22C0AA5C007060FC /* TheaterCell.swift in Sources */,
 				639D1A9622A3B5B5007060FC /* ListViewController.swift in Sources */,
+				639D1B3D22C0AC95007060FC /* TheaterListController.swift in Sources */,
 				639D1A6522A3AFC3007060FC /* AppDelegate.swift in Sources */,
 				639D1B1F22AE5128007060FC /* DetailViewController.swift in Sources */,
 				639D1A9A22A582B9007060FC /* MovieCell.swift in Sources */,
