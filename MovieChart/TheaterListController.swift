@@ -39,11 +39,11 @@ class TheaterListController:UITableViewController {
                 //encdata라는 변수에 담겨진 Data 객체를 파싱하여 NSArray객체로 반환한다.
                 for obj in apiArray!{
                     self.list.append(obj as! NSDictionary)
-        // llst라는 객체
+        // llst라는 배열에 일어온 데이터를 순회하면서 추가한다.
                     
                 }
             }
-                catch{
+                catch{ // 바로 위에 do에 대한 에러를 처리하는 부분이다.
                     let alert = UIAlertController(
                     title: "실패", message: "데이터 분석이 실패하였습니다.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "확인 ", style: .cancel))
@@ -56,7 +56,7 @@ class TheaterListController:UITableViewController {
                 self.startPoint += sList
                 
                 
-            } catch{
+        } catch{ // 맨 처음 do에 대한 에러를 처리하는 구문이다.
                 let alert = UIAlertController(title: "실패", message: "데이터를 불러오는데 실패하였습니다.", preferredStyle: .alert
                     )
                 alert.addAction(UIAlertAction(title: "확인", style: .cancel))
@@ -73,11 +73,23 @@ class TheaterListController:UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "tCell") as! TheaterCell
         
-        cell.name?.text = obj["상연관명"] as? String
+        cell.name?.text = obj["상영관명"] as? String
         cell.tel?.text = obj["연락처"] as? String
-        cell.addr?.text = obj["소개지도로명주소"] as? String
+        cell.addr?.text = obj["소재지도로명주소"] as? String
+        
         
         return cell
+    }
+    
+      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if( segue.identifier == "segue_map"){
+            
+            let path = self.tableView.indexPath(for: sender as! UITableViewCell)
+            let data = self.list[path!.row]
+
+            (segue.destination as? TheaterViewController)?.param = data
+        }
+        
     }
     
         
